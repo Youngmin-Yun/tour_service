@@ -1,0 +1,13 @@
+<?xml version = "1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd.mybatis-3-mapper.dtd">
+<mapper namespace = "com.tourService.mapper.SearchMapper">
+    <select id = "selectFestival" resultType = "com.tourService.vo.FestivalVO">
+        SELECT * from festival where addr1 like #{region} order by modifiedtime desc
+    </select>
+    <select id = "selectRegionalTour" resultType = "com.tourService.vo.RegionalTourVO">
+        SELECT * from regionalTour where addr1 like #{region} ORDER by modifiedtime desc;
+    </select>
+    <select id = "selectAccommodation" resultType = "com.tourService.vo.AccommodationVO">
+    SELECT * from accommodation where addr1 like #{region} ORDER by modifiedtime desc;
+    </select>
+</mapper>
