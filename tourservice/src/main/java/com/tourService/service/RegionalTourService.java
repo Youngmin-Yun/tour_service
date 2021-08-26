@@ -1,5 +1,7 @@
 package com.tourService.service;
 
+import java.util.List;
+
 import com.tourService.mapper.RegionalTourMapper;
 import com.tourService.vo.RegionalTourVO;
 
@@ -12,5 +14,8 @@ public class RegionalTourService {
     RegionalTourMapper mapper;
     public void insertRegionalTourInfo(RegionalTourVO vo){
         mapper.insertRegionalTourInfo(vo);
+    }
+    public List<RegionalTourVO> selectRegionalTourInfo(String region){
+        return mapper.selectRegionalTourInfo(region);
     }
 }

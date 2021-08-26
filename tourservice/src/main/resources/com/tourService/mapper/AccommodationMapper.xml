@@ -5,4 +5,12 @@
         INSERT INTO accommodation (addr1, areacode, cat1, cat2, cat3, contentid, contenttypeid, createdtime, mapx, mapy, mlevel, modifiedtime, readcount, sigungucode, tel, title, firstimage, firstimage2, addr2, hanok, benikia, goodStay)
         VALUES(#{addr1}, #{areacode}, #{cat1}, #{cat2}, #{cat3}, #{contentid}, #{contenttypeid}, #{createdtime}, #{mapx}, #{mapy}, #{mlevel}, #{modifiedtime}, #{readcount}, #{sigungucode}, #{tel}, #{title}, #{firstimage}, #{firstimage2}, #{addr2}, #{hanok}, #{benikia}, #{goodStay});
     </insert>
+    <select id = "selectAccommodation" resultType = "com.tourService.vo.AccommodationVO">
+        <if test = 'type != null'>
+            SELECT * from accommodation where title like #{type} and addr1 like #{region} ORDER by modifiedtime desc;
+        </if>
+        <if test = 'type == null'>
+            select * from accommodation where addr1 like #{region} order BY modifiedtime;
+        </if>
+    </select>
 </mapper>

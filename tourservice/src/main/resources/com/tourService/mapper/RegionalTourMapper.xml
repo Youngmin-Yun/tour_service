@@ -5,4 +5,7 @@
         INSERT INTO regionalTour(addr1, areacode, cat1, cat2, cat3, contentid, contenttypeid, createdtime, firstimage, firstimage2, mapx, mapy, mlevel, modifiedtime, readcount, sigungucode, title, zipcode)
         VALUES(#{addr1}, #{areacode}, #{cat1}, #{cat2}, #{cat3}, #{contentid}, #{contenttypeid}, #{createdtime}, #{firstimage}, #{firstimage2}, #{mapx}, #{mapy}, #{mlevel}, #{modifiedtime}, #{readcount}, #{sigungucode}, #{title}, #{zipcode});
     </insert>
+    <select id = "selectRegionalTourInfo" resultType = "com.tourService.vo.RegionalTourVO">
+        SELECT * from regionalTour where addr1 like #{region} ORDER by modifiedtime desc;
+    </select>
 </mapper>

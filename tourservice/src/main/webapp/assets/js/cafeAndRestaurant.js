@@ -40,7 +40,6 @@ $(function () {
                                 text: r.data[i].itsBroNm  // text 옵션을 설정하면 마커 위에 텍스트를 함께 표시할 수 있습니다     
                             }
                         ];
-                        
                         var staticMapContainer  = document.getElementById('staticMap'+r.data[i].rk) // 이미지 지도를 표시할 div  
                         var staticMapOption = { 
                             center: new kakao.maps.LatLng(coords.La, coords.Ma), // 이미지 지도의 중심좌표

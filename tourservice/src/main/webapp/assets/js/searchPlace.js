@@ -8,9 +8,13 @@ $(function(){
             console.log(r)
             $(".content").html("")
             for(let i = 0; i<r.tour.length; i++){
+                var lat = r.tour[i].mapy
+                var lng = r.tour[i].mapx
+                var title = r.tour[i].title 
                 let tag = 
-                '<div class="title">'+r.tour[i].title+'</div>'+
-                '<div class="adr">'+r.tour[i].addr1+'</div>'
+                '<div class="title">'+title+'</div>'+
+                '<div class="adr">'+r.tour[i].addr1+'</div>'+
+                '<a href="https://map.kakao.com/link/map/'+title+','+lat+','+lng+'" target="_blank">지도보기</a>'
                 $(".content").append(tag)
             }
         }

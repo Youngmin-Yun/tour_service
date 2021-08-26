@@ -2,6 +2,7 @@ package com.tourService.api;
 
 import java.net.URLEncoder;
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.xml.parsers.DocumentBuilder;
@@ -12,6 +13,7 @@ import com.tourService.vo.RegionalTourVO;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import org.w3c.dom.Document;
@@ -82,5 +84,14 @@ public class RegionalTourAPIController {
         Node node = (Node) nlList.item(0);
         if(node == null) return null;
         return node.getNodeValue();
+    }
+
+    @GetMapping("/api/mapsearch/regionaltour")
+    public Map<String, Object> getRegionalTourByMap(@RequestParam String region){
+        Map<String, Object> resultMap = new LinkedHashMap<String, Object>();
+        region = region+"%";
+        List<RegionalTourVO> list = service.selectRegionalTourInfo(region);
+        resultMap.put("list", list);
+        return resultMap;
     }
 }

@@ -19,8 +19,8 @@ pageEncoding="UTF-8"%>
         </div>
     </div>
     <div class="shortcut">
-        <a href="#" class="accommodation">숙소 검색</a>
-        <a href="#" class="map">지도 검색</a>
+        <a href="/search/accom" class="accommodation">숙소 검색</a>
+        <a href="/map" class="map">지도 검색</a>
         <a href="/topCafeAndRestaurant" class="topCafe">많이 찾는 식당 & 카페 top100</a>
         <a href="/top100place" class="topPlace">많이 찾는 장소 top100</a>
     </div>
