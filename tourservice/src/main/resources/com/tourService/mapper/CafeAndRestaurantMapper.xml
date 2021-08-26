@@ -5,4 +5,7 @@
         INSERT INTO CafeAndRestaurant (areaCode, areaNm, baseYm, dtlAddrNm, itsBroNm, rk, signguCode, signguNm, totlYn)
         VALUES(#{areaCode}, #{areaNm}, #{baseYm}, #{dtlAddrNm}, #{itsBroNm}, #{rk}, #{signguCode}, #{signguNm}, #{totlYn});
     </insert>
+    <select id = "selectCafeAndRestaurantInfo" resultType = "com.tourService.vo.CafeAndRestaurantVO">
+        SELECT * FROM CafeAndRestaurant;
+    </select>
 </mapper>

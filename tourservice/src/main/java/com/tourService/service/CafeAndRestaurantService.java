@@ -1,5 +1,7 @@
 package com.tourService.service;
 
+import java.util.List;
+
 import com.tourService.mapper.CafeAndRestaurantMapper;
 import com.tourService.vo.CafeAndRestaurantVO;
 
@@ -12,5 +14,8 @@ public class CafeAndRestaurantService {
     CafeAndRestaurantMapper mapper;
     public void insertCafeAndRestaurantInfo(CafeAndRestaurantVO vo){
         mapper.insertCafeAndRestaurantInfo(vo);
+    }
+    public List<CafeAndRestaurantVO> selectCafeAndRestaurantInfo(){
+        return mapper.selectCafeAndRestaurantInfo();
     }
 }

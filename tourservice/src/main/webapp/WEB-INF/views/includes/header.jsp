@@ -9,6 +9,9 @@ pageEncoding="UTF-8"%>
     <title>방방곡곡 구석구석</title>
 </head>
 <body>
+    <div class="title">
+        <h1>방방곡곡 구석구석</h1>
+    </div>
     <div class="search">
         <div class="place">
             <input type="text" class = "content" placeholder="어디 가보실래요? ex) 제주도"></input>

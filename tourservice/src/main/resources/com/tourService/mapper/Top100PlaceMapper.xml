@@ -5,4 +5,7 @@
     INSERT top100Place (areaCode, areaNm, baseYm, dtlAddrNm, itsBroNm, rk, signguCode, signguNm, totlYn)
     VALUES(#{areaCode}, #{areaNm}, #{baseYm}, #{dtlAddrNm}, #{itsBroNm}, #{rk}, #{signguCode}, #{signguNm}, #{totlYn});
     </insert>
+    <select id = "selectTop100PlaceInfo" resultType = "com.tourService.vo.Top100PlaceVO">
+        select * from top100place
+    </select>
 </mapper>

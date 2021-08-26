@@ -2,6 +2,7 @@ package com.tourService.api;
 
 import java.net.URLEncoder;
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.xml.parsers.DocumentBuilder;
@@ -25,7 +26,7 @@ public class Top100PlaceAPIController {
     @GetMapping("/api/place")
     public Map<String, Object> insertTop100PlaceInfo()throws Exception{
         Map<String, Object> resultMap = new LinkedHashMap<String, Object>();
-        StringBuilder urlBuilder = new StringBuilder("http://api.visitkorea.or.kr/openapi/service/rest/DataLabService/tmapFoodTarItsBroDDList"); /*URL*/
+        StringBuilder urlBuilder = new StringBuilder("http://api.visitkorea.or.kr/openapi/service/rest/DataLabService/tmapTotalTarItsBroDDList"); /*URL*/
         urlBuilder.append("?" + URLEncoder.encode("ServiceKey","UTF-8") + "=Qvh%2FPxBBmg3Pp64QitOr7PScIkH25vOjdehJK4Fr4N2ITDAoFZl7TONz6l%2Bovat%2BrMpoRgfFwWIXMssHOkAmVw%3D%3D"); /*Service Key*/
         // urlBuilder.append("&" + URLEncoder.encode("ServiceKey","UTF-8") + "=" + URLEncoder.encode("인증키 (URL- Encode)", "UTF-8")); /*공공데이터포털에서 받은 인증키*/
         urlBuilder.append("&" + URLEncoder.encode("pageNo","UTF-8") + "=" + URLEncoder.encode("1", "UTF-8")); /*현재 페이지 번호*/
@@ -70,5 +71,13 @@ public class Top100PlaceAPIController {
         Node node = (Node) nlList.item(0);
         if(node == null) return null;
         return node.getNodeValue();
+    }
+
+    @GetMapping("/api/top100place")
+    public Map<String, Object> getTop100PlaceInfo(){
+        Map<String, Object> resultMap = new LinkedHashMap<String, Object>();
+        List<Top100PlaceVO> list = service.selectTop100PlaceInfo();
+        resultMap.put("data", list);
+        return resultMap;
     }
 }

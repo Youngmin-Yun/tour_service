@@ -2,6 +2,7 @@ package com.tourService.api;
 
 import java.net.URLEncoder;
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.xml.parsers.DocumentBuilder;
@@ -70,5 +71,13 @@ public class CafeAndRestaurantAPIController {
         Node node = (Node) nlList.item(0);
         if(node == null) return null;
         return node.getNodeValue();
+    }
+
+    @GetMapping("/api/cafeAndRestaurant")
+    public Map<String, Object> getCafeAndRestaurantInfo(){
+        Map<String, Object> resultMap = new LinkedHashMap<String, Object>();
+        List<CafeAndRestaurantVO> list = service.selectCafeAndRestaurantInfo();
+        resultMap.put("data", list);
+        return resultMap;
     }
 }

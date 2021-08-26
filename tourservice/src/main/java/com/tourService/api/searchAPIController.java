@@ -21,7 +21,7 @@ public class searchAPIController {
     @GetMapping("/api/search/festival")
     public Map<String, Object> getFestivalInfo(@RequestParam String region){
         Map<String, Object> resultMap = new LinkedHashMap<String, Object>();
-        region = region + "%";
+        region = "%"+region + "%";
         List<FestivalVO> festival = service.selectFestival(region);
         resultMap.put("festival", festival);
         return resultMap;
@@ -29,7 +29,7 @@ public class searchAPIController {
     @GetMapping("/api/search/tour")
     public Map<String, Object> getRegionalTourInfo(@RequestParam String region){
         Map<String, Object> resultMap = new LinkedHashMap<String, Object>();
-        region = region + "%";
+        region = "%"+region + "%";
         List<RegionalTourVO> tour = service.selectRegionalTour(region);
         resultMap.put("tour", tour);
         return resultMap;
@@ -37,7 +37,7 @@ public class searchAPIController {
     @GetMapping("/api/search/accommodation")
     public Map<String, Object> getAccommodationInfo(@RequestParam String region){
         Map<String, Object> resultMap = new LinkedHashMap<String, Object>();
-        region = region + "%";
+        region = "%"+region + "%";
         List<AccommodationVO> accommodation = service.selectAccommodation(region);
         resultMap.put("accommodation", accommodation);
         return resultMap;
