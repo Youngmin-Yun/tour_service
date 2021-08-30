@@ -35,6 +35,7 @@ $(function () {
                         });
                         kakao.maps.event.addListener(marker, 'mouseover', makeOverListener(map, marker, infowindow));
                         kakao.maps.event.addListener(marker, 'mouseout', makeOutListener(infowindow));
+                        markers.push(marker);
                     }
                     // 마커 이미지의 이미지 주소입니다
                     function makeOverListener(map, marker, infowindow) {
@@ -54,7 +55,7 @@ $(function () {
     })
     function resetMarkers(){
         for(let i = 0; i < markers.length; i++){
-            marker[i].setMap(null)
+            markers[i].setMap(null)
         }
         markers = new Array()
     }
