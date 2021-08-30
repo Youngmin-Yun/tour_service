@@ -11,7 +11,7 @@ pageEncoding="UTF-8"%>
 </head>
 <body>
     <div class="title">
-        <h1>숙소</h1>
+        <%@include file = "/WEB-INF/views/clickIcon/accommodation/search.jsp"%>
     </div>
     <div class="contents">
     </div>

@@ -14,8 +14,9 @@ pageEncoding="UTF-8"%>
     </div>
     <div class="search">
         <div class="place">
-            <input type="text" class = "content" placeholder="어디 가보실래요? ex) 제주도"></input>
+            <input type="text" class = "content" placeholder="어디 가보실래요? ex) 제주"></input>
             <button class="go">검색</button>
+            <a href="/">메인으로 가기</a>
         </div>
         <button id="festival">행사</button>
         <button id="place">관광지</button>

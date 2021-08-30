@@ -16,6 +16,7 @@ pageEncoding="UTF-8"%>
             <div class="place">
                 <input type="text" class = "content" value="제주" placeholder="어디 가보실래요? ex) 제주도"></input>
                 <button class="go">검색</button>
+                <a href="/">메인으로 가기</a>
             </div>
         </div>
     </div>

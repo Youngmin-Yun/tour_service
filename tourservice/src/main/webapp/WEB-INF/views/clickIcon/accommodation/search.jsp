@@ -25,6 +25,7 @@ pageEncoding="UTF-8"%>
             </select>
             <input type="text" class = "content" placeholder="지역을 입력해주세요 ex) 제주도"></input>
             <button class="go">검색</button>
+            <a href="/">메인으로 가기</a>
         </div>
     </div>
 </body>

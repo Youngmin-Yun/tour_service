@@ -12,6 +12,7 @@ pageEncoding="UTF-8"%>
 <body>
     <div class="top">
         <h1>top 100 카페 & 식당</h1>
+        <a href="/">메인으로 가기</a>
     </div>
     <div class="contents">
         

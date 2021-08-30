@@ -1,4 +1,11 @@
 $(function () {
+    var container = document.getElementById('map'); //지도를 담을 영역의 DOM 레퍼런스
+    var options = { //지도를 생성할 때 필요한 기본 옵션
+	center: new kakao.maps.LatLng(36.490530809716226, 127.92956680220728), //지도의 중심좌표.
+	level: 12 //지도의 레벨(확대, 축소 정도)
+    };
+    var map = new kakao.maps.Map(container, options); //지도 생성 및 객체 리턴
+    var markers = []
     $(".go").click(function () {
         let region = $(".content").val()
         console.log(region)
@@ -7,14 +14,7 @@ $(function () {
             url: "/api/mapsearch/regionaltour?region=" + region,
             success: function (r) {
                 console.log(r)
-                for (let p = 0; p < r.list.length; p++) {
-                    var mapContainer = document.getElementById('map'), // 지도를 표시할 div  
-                        mapOption = {
-                            center: new kakao.maps.LatLng(r.list[0].mapy, r.list[0].mapx), // 지도의 중심좌표
-                            level: 5// 지도의 확대 레벨
-                        };
-                }
-                var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다  
+                resetMarkers()
                 for (let i = 0; i < r.list.length; i++) {
                     var positions = [{
                         content: '<div"> 관광지명 : ' + r.list[i].title + '</div>' +
@@ -52,6 +52,11 @@ $(function () {
             }
         })
     })
-
+    function resetMarkers(){
+        for(let i = 0; i < markers.length; i++){
+            marker[i].setMap(null)
+        }
+        markers = new Array()
+    }
 
 })
