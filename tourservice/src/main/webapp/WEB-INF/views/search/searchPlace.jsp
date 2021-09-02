@@ -14,7 +14,7 @@ pageEncoding="UTF-8"%>
 
 <body>
     <div class="top">
-
+        <button id = "selectPlc">관광지 저장</button>
     </div>
     <div class="content">
         

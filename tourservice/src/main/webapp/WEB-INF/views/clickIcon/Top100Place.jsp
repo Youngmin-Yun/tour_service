@@ -11,8 +11,8 @@ pageEncoding="UTF-8"%>
 </head>
 <body>
     <div class="top">
+        <img src="https://cdn.icon-icons.com/icons2/426/PNG/512/Map_1135px_1195280_42272.png" style="height: 100px; width: 100px;" onclick="location.href='/'">
         <h1>top 100 여행지</h1>
-        <a href="/">메인으로 가기</a>
     </div>
     <div class="contents">
     </div>

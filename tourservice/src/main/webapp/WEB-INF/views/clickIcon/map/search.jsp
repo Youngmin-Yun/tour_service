@@ -11,12 +11,12 @@ pageEncoding="UTF-8"%>
 </head>
 <body>
     <div class="top">
+        <img src="https://cdn.icon-icons.com/icons2/426/PNG/512/Map_1135px_1195280_42272.png" style="height: 100px; width: 100px;" onclick="location.href='/'">
         <h1>지도로 관광지 검색</h1>
         <div class="search">
             <div class="place">
                 <input type="text" class = "content" value="제주" placeholder="어디 가보실래요? ex) 제주도"></input>
                 <button class="go">검색</button>
-                <a href="/">메인으로 가기</a>
             </div>
         </div>
     </div>

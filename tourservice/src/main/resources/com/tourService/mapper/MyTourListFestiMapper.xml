@@ -1,0 +1,15 @@
+<?xml version = "1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd.mybatis-3-mapper.dtd">
+<mapper namespace = "com.tourService.mapper.MyTourListFestiMapper">
+    <insert id = "insertMyFesti">
+        INSERT INTO myTourListFesti
+        (mb_seq, festi_seq)
+        VALUES(#{id}, #{seq});
+    </insert>
+    <select id = "selectMyFesti" resultType = "com.tourService.vo.FestivalVO">
+        select * from myTourListFesti a inner join festival b where a.festi_seq = b.seq and a.mb_seq = #{seq};
+    </select>
+    <delete id = "deleteMyFesti">
+        DELETE FROM myTourListFesti WHERE mb_seq = #{id} and seq= #{seq};
+    </delete>
+</mapper>

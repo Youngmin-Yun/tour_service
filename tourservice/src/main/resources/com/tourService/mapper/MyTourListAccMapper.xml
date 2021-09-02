@@ -1,0 +1,15 @@
+<?xml version = "1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd.mybatis-3-mapper.dtd">
+<mapper namespace = "com.tourService.mapper.MyTourListAccMapper">
+    <insert id = "insertMyAccList">
+        INSERT INTO myTourListAcc
+        (mb_seq, acc_seq)
+        VALUES(#{id}, #{seq});
+    </insert>
+    <select id = "selectMyAccList" resultType = "com.tourService.vo.AccommodationVO">
+        select * from myTourListAcc a inner join accommodation b where a.acc_seq = b.seq and a.mb_seq = #{seq};
+    </select>
+    <delete id = "deleteMyAcc">
+        DELETE FROM myTourListAcc WHERE mb_seq = #{id} and seq= #{seq};
+    </delete>
+</mapper>

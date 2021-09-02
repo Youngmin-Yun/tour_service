@@ -1,0 +1,15 @@
+<?xml version = "1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd.mybatis-3-mapper.dtd">
+<mapper namespace = "com.tourService.mapper.MyTourListPlaceMapper">
+    <insert id ="insertMyPlace">
+        INSERT INTO myTourListPlace
+        (mb_seq, pl_seq)
+        VALUES(#{id}, #{seq});
+    </insert>
+    <select id = "selectMyPlace" resultType = "com.tourService.vo.RegionalTourVO">
+        select * from myTourListPlace a inner join regionalTour b where a.pl_seq = b.seq and a.mb_seq = #{seq};
+    </select>
+    <delete id = "deleteMyPlace">
+        DELETE FROM myTourListPlace WHERE mb_seq = #{id} and seq= #{seq};
+    </delete>
+</mapper>

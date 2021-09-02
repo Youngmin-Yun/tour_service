@@ -14,7 +14,7 @@ pageEncoding="UTF-8"%>
 
 <body>
     <div class="top">
-
+        <button id = "selectAcc">숙소 저장</button>
     </div>
     <div class="content">
         

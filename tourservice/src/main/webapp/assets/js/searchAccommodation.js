@@ -12,6 +12,7 @@ $(function(){
                 var lng = r.accommodation[i].mapx
                 var title = r.accommodation[i].title 
                 let tag = 
+                '<input type="checkbox" name = "check" class="check" value="'+r.accommodation[i].seq+'">'+
                 '<div class="title">'+title+'</div>'+
                 '<div class="tel">'+r.accommodation[i].tel+'</div>'+
                 '<div class="adr">'+r.accommodation[i].addr1+'</div>'+
@@ -19,5 +20,23 @@ $(function(){
                 $(".content").append(tag)
             }
         }
+    })
+    $("#selectAcc").click(function(){
+        let count = $("input:checkbox[name=check]:checked")
+        console.log(count.length)
+        let data = ""
+        count.each(function () {
+            var chk = $(this).val();
+            data += chk+","
+        });
+        data = data.substr(0, data.length-1);
+        let id = $("#id").val()
+        $.ajax({
+            type: "post",
+            url: "/api/insert/mytouracc?id="+id+"&seq="+data,
+            success: function (r) {
+                alert(r.message)
+            }
+        })
     })
 })

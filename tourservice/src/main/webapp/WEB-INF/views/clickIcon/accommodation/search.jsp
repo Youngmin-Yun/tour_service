@@ -10,6 +10,7 @@ pageEncoding="UTF-8"%>
 </head>
 <body>
     <div class="top">
+        <img src="https://cdn.icon-icons.com/icons2/426/PNG/512/Map_1135px_1195280_42272.png" style="height: 100px; width: 100px;" onclick="location.href='/'">
         <h1>숙소</h1>
     </div>
     <div class="search">
@@ -25,7 +26,6 @@ pageEncoding="UTF-8"%>
             </select>
             <input type="text" class = "content" placeholder="지역을 입력해주세요 ex) 제주도"></input>
             <button class="go">검색</button>
-            <a href="/">메인으로 가기</a>
         </div>
     </div>
 </body>
