@@ -11,14 +11,15 @@ $(function(){
                 var title = r.list[i].title 
                 let tag = 
                 '<div class="title">' + title + '</div>' +
-                '<button id = "delete" value = "'+r.list[i].seq+'">삭제</button>'+
+                '<button class = "delete"  data-seq="'+r.list[i].seq+'">삭제</button>'+
                 '<div class="tel">' + r.list[i].tel + '</div>' +
                 '<div class="adr">' + r.list[i].addr1 + '</div>'+
                 '<a href="https://map.kakao.com/link/map/'+title+','+lat+','+lng+'" target="_blank">지도보기</a>'
                 $(".content").append(tag)
             }
-            $("#delete").click(function(){
-                let seq = $("#delete").val()
+            $(".delete").click(function(){
+                let seq = $(this).attr("data-seq")
+                console.log(seq)
                 $.ajax({
                     type:"delete",
                     url:"/api/delete/mytourfesti?id="+id+"&seq="+seq,
